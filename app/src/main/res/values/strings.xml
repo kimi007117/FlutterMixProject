@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FlutterMixProject</string>
+    <string name="open_native">打开native页面</string>
+    <string name="open_flutter">打开flutter页面</string>
+    <string name="open_flutter_fragment">打开flutter fragment页面</string>
+    <string name="native_info">这是一个native activity</string>
 </resources>
