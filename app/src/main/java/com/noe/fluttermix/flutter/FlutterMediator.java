@@ -12,6 +12,7 @@ import com.idlefish.flutterboost.interfaces.INativeRouter;
 import java.util.Map;
 
 import io.flutter.embedding.android.FlutterView;
+import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodChannel;
 
 /**
@@ -36,13 +37,25 @@ public class FlutterMediator {
             @Override
             public void onEngineCreated() {
 
+                FlutterBoost.instance().engineProvider().getPlugins().add(new FlutterPlugin() {
+                    @Override
+                    public void onAttachedToEngine(FlutterPluginBinding binding) {
+                        Log.e("MyApplication", "MethodChannel create");
+                        TextPlatformViewPlugin.register(binding.getPlatformViewRegistry());
+                    }
+
+                    @Override
+                    public void onDetachedFromEngine(FlutterPluginBinding binding) {
+
+                    }
+                });
             }
 
             @Override
             public void onPluginsRegistered() {
-                MethodChannel mMethodChannel = new MethodChannel(FlutterBoost.instance().engineProvider().getDartExecutor(), "methodChannel");
-                Log.e("MyApplication", "MethodChannel create");
-                TextPlatformViewPlugin.register(FlutterBoost.instance().getPluginRegistry().registrarFor("TextPlatformViewPlugin"));
+
+
+
             }
 
             @Override

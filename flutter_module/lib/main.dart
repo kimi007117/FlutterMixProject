@@ -7,8 +7,8 @@ import 'package:flutter_module/second_page.dart';
 import 'simple_page_widgets.dart';
 
 void main() {
-//  runApp(MyApp());
-  runApp(_widgetForRoute(window.defaultRouteName));
+  runApp(MyApp());
+//  runApp(_widgetForRoute(window.defaultRouteName));
 }
 
 

@@ -8,6 +8,7 @@ import android.util.Log;
 import com.idlefish.flutterboost.containers.BoostFlutterActivity;
 import com.noe.fluttermix.FlutterFragmentPageActivity;
 import com.noe.fluttermix.NativePageActivity;
+import com.noe.fluttermix.base.BaseApplication;
 
 import java.util.HashMap;
 import java.util.Map;
