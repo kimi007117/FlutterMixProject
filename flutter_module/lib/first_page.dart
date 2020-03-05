@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_module/redux/count_action.dart' as action;
+import 'package:flutter_module/redux/count_state.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 
 class FirstPage extends StatelessWidget {
   final String channelName = "com.zcm/demo";
@@ -32,6 +35,17 @@ class FirstPage extends StatelessWidget {
                 onPressed: () {
                   print("To Native Page");
                   jumpToNativePage();
+                },
+              ),
+              StoreConnector<CountState, VoidCallback>(
+                converter: (store) {
+                  return () => store.dispatch(action.Action.increment);
+                },
+                builder: (context, callback) {
+                  return RaisedButton(
+                    onPressed: callback,
+                    child: Text('redux'),
+                  );
                 },
               ),
             ],

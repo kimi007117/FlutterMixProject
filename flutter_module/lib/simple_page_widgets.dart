@@ -270,6 +270,30 @@ class _FlutterRouteWidgetState extends State<FlutterRouteWidget> {
                 onTap: () => FlutterBoost.singleton
                     .open("sample://flutterFragmentPage"),
               ),
+              InkWell(
+                child: Container(
+                    padding: const EdgeInsets.all(8.0),
+                    margin: const EdgeInsets.all(8.0),
+                    color: Colors.yellow,
+                    child: Text(
+                      'open redux first page',
+                      style: TextStyle(fontSize: 22.0, color: Colors.black),
+                    )),
+                onTap: () =>
+                    FlutterBoost.singleton.open("flutter://firstPage"),
+              ),
+              InkWell(
+                child: Container(
+                    padding: const EdgeInsets.all(8.0),
+                    margin: const EdgeInsets.all(8.0),
+                    color: Colors.yellow,
+                    child: Text(
+                      'open redux second page',
+                      style: TextStyle(fontSize: 22.0, color: Colors.black),
+                    )),
+                onTap: () =>
+                    FlutterBoost.singleton.open("flutter://secondPage"),
+              ),
             ],
           ),
 
@@ -290,8 +314,7 @@ class FragmentRouteWidget extends StatelessWidget {
       appBar: AppBar(
         title: Text('flutter_boost_example'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView(
         children: <Widget>[
           Container(
             margin: const EdgeInsets.only(top: 80.0),

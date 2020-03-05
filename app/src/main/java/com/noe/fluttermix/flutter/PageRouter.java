@@ -22,10 +22,13 @@ public class PageRouter {
     public static final String FLUTTER_PAGE_URL = "sample://flutterPage";
     public static final String FLUTTER_FRAGMENT_PAGE_URL = "sample://flutterFragmentPage";
 
+
     public final static Map<String, String> pageName = new HashMap<String, String>() {{
         put("first", "first");
         put("second", "second");
         put("tab", "tab");
+        put("flutter://firstPage", "flutter://firstPage");
+        put("flutter://secondPage", "flutter://secondPage");
 
         put(FLUTTER_PAGE_URL, "flutterPage");
     }};
